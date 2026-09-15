@@ -11,7 +11,6 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
 
-
 # explicitly specify the model
 model_name ="google/flan-t5-large"
 

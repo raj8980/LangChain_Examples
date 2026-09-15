@@ -25,3 +25,24 @@ prompt = "explain trignometry"
 response= get_completion(prompt)
 print(response)
 
+# Few shot prompting
+prompt = """
+Feedback: "I loved the quick service and friendly staff."
+Classification: Great we are delighed to have a Positive sentiment
+Score: 0.9
+
+Feedback: "The product did not meet any expectations."
+Classification: Oops, we are afraid its a Negative sentiment
+Score: 0.2
+
+Feedback: "I am not sure if this is the right product for me."
+Classification: We will try to improve and satisfy you next time as its a Neutral sentiment.
+Score: 0.5
+
+Feedback: "Your customer support was helpful, very satified."
+Classification:
+Score:
+"""
+
+response = get_completion(prompt, model = "gpt-5.6-luna")
+print(response)
