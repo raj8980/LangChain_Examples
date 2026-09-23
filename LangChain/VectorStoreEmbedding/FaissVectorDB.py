@@ -22,5 +22,10 @@ doc_splitter = RecursiveCharacterTextSplitter(chunk_size=1024,chunk_overlap=64)
 split_texts = doc_splitter.split_documents(pdf_pages)
 print(len(split_texts))
 
-
+## Not able to run this code having long running time while stop it's give download error.
+MODEL_NAME="sentence-transformers/all-MiniLM-L6-v2"
+hf_embed = HuggingFaceEmbeddings(model_name=MODEL_NAME)
+text = split_texts[0].page_content
+hf_embed_result= hf_embed.embed_documents([text])
+print(len(hf_embed_result[0]))
 
